@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Transcription Filler</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ── Screen 1: Landing / Upload ─────────────────────────── -->
+<section class="screen screen-landing active" id="screen-landing">
+    <div class="landing-card">
+        <div class="brand brand-landing">
+            <span class="brand-mark">൧</span>
+            <div class="brand-text">
+                <h1>Transcription Filler</h1>
+                <p>Fill missing OCR pages with spoken Malayalam</p>
+            </div>
+        </div>
+
+        <label class="upload-dropzone" for="json-upload-landing">
+            <div class="dropzone-icon">⬆</div>
+            <div class="dropzone-title">Upload OCR JSON</div>
+            <div class="dropzone-sub">Click to choose a .json file</div>
+            <input type="file" id="json-upload-landing" accept=".json" hidden>
+        </label>
+
+        <button class="btn btn-ghost btn-sample" id="sample-data-btn">Try with sample data instead</button>
+    </div>
+</section>
+
+<!-- ── Screen 2: Main dashboard ───────────────────────────── -->
+<section class="screen screen-main" id="screen-main">
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <span class="brand-mark">൧</span>
+                <div class="brand-text">
+                    <h1>Transcription Filler</h1>
+                    <p>Fill missing OCR pages with spoken Malayalam</p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <label class="btn btn-ghost" for="json-upload-topbar">
+                    Load OCR file
+                    <input type="file" id="json-upload-topbar" accept=".json" hidden>
+                </label>
+                <button class="btn btn-primary" id="save-btn">Save result</button>
+                <a class="btn btn-ghost" id="download-btn" href="/api/download">Download JSON</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="layout layout-split">
+
+        <section class="page-list" id="page-list">
+            <!-- Page cards injected here by app.js -->
+        </section>
+
+        <aside class="dashboard-rail" id="dashboard-rail">
+            <h2 class="dashboard-title">Progress</h2>
+
+            <div class="dash-progress-track">
+                <div class="dash-progress-fill" id="dash-progress-fill"></div>
+            </div>
+            <div class="dash-progress-label" id="dash-progress-label">0% complete</div>
+
+            <div class="dash-stat dash-total">
+                <span class="dash-value" id="stat-total">0</span>
+                <span class="dash-label">Null pages</span>
+            </div>
+            <div class="dash-stat dash-pending">
+                <span class="dash-value" id="stat-pending">0</span>
+                <span class="dash-label">Pending</span>
+            </div>
+            <div class="dash-stat dash-transcribed">
+                <span class="dash-value" id="stat-transcribed">0</span>
+                <span class="dash-label">Awaiting confirm</span>
+            </div>
+            <div class="dash-stat dash-confirmed">
+                <span class="dash-value" id="stat-confirmed">0</span>
+                <span class="dash-label">Confirmed</span>
+            </div>
+            <div class="dash-stat dash-skipped">
+                <span class="dash-value" id="stat-skipped">0</span>
+                <span class="dash-label">Skipped</span>
+            </div>
+        </aside>
+
+    </main>
+</section>
+
+<!-- ── Malayalam virtual keyboard modal ───────────────────── -->
+<div class="kb-overlay" id="kb-overlay">
+    <div class="kb-modal" id="kb-modal">
+        <div class="kb-header" id="kb-header">
+            <span class="kb-drag-icon">⠿</span>
+            <span class="kb-title">Malayalam Keyboard</span>
+            <button class="kb-close" id="kb-close" type="button">✕</button>
+        </div>
+
+        <div class="kb-section">
+            <div class="kb-section-label">Vowels</div>
+            <div class="kb-grid" id="kb-vowels"></div>
+        </div>
+        <div class="kb-section">
+            <div class="kb-section-label">Consonants</div>
+            <div class="kb-grid" id="kb-consonants"></div>
+        </div>
+        <div class="kb-section">
+            <div class="kb-section-label">Vowel signs (matras)</div>
+            <div class="kb-grid" id="kb-matras"></div>
+        </div>
+        <div class="kb-section">
+            <div class="kb-section-label">Others</div>
+            <div class="kb-grid" id="kb-others"></div>
+        </div>
+
+        <div class="kb-controls">
+            <button class="btn btn-outline btn-small" id="kb-space" type="button">Space</button>
+            <button class="btn btn-outline btn-small" id="kb-backspace" type="button">⌫ Backspace</button>
+            <button class="btn btn-primary btn-small" id="kb-done" type="button">Done</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
