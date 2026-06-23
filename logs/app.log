@@ -3702,3 +3702,1034 @@
 2026-06-22 15:22:24 | INFO     | app.py:528 | Page 'page_2' confirmed
 2026-06-22 15:22:24 | DEBUG    | app.py:399 | API: /api/status called
 2026-06-22 15:22:24 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 15:47:25 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 15:47:25 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 15:47:25 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 15:47:25 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 15:47:25 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 15:47:25 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 15:47:25 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 15:47:25 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 15:47:25 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 15:47:25 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 15:47:25 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 15:47:25 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 15:47:25 | INFO     | logger.py:64 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 15:47:25 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 15:47:26 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 15:47:26 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 15:47:26 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 15:47:26 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 15:47:26 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 15:47:26 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 15:47:26 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 15:47:26 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 15:47:26 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 15:47:26 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 15:47:26 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 15:47:26 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 15:47:26 | INFO     | logger.py:64 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 15:47:26 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 15:47:32 | INFO     | app.py:389 | Serving index page
+2026-06-22 15:47:32 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:47:32 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 15:47:38 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 15:47:38 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 15:47:38 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 15:47:38 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 15:47:38 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 15:47:38 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 15:47:38 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 15:47:38 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 15:47:38 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 15:47:38 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 15:47:38 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 15:47:38 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 15:47:38 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 15:47:38 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:47:38 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 15:48:47 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 15:48:47 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-22 15:48:47 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 15:48:47 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 15:48:47 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 15:48:47 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 15:48:47 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 658.2 KB
+2026-06-22 15:48:47 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 15:48:47 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 15:48:47 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 15:48:49 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 15:48:56 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 15:48:56 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 15:53:14 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 15:53:14 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 15:53:14 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 15:53:15 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 336960])
+2026-06-22 15:53:15 | DEBUG    | transcriber.py:201 | VAD trimming — 21.06s -> 21.06s (522/702 frames had speech)
+2026-06-22 15:53:16 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.988
+2026-06-22 15:53:16 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 21.1s
+2026-06-22 15:53:16 | INFO     | transcriber.py:421 | Audio duration: 21.1s — splitting into 1 chunk(s) of 30s each
+2026-06-22 15:53:19 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 21.1s] — detected: English (en) — using generic multilingual model ...
+2026-06-22 15:53:32 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'It's a rainy day and David doesn't want to go outside. He si...'
+2026-06-22 15:53:32 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 338 total characters
+2026-06-22 15:53:32 | INFO     | transcriber.py:487 | Language(s) detected across this file: English (en)
+2026-06-22 15:53:32 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 15:53:32 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 15:53:32 | DEBUG    | dict_filler.py:68 | Text preview: 'It's a rainy day and David doesn't want to go outside. He sits by the window and...'
+2026-06-22 15:53:32 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 15:53:32 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:53:32 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 15:55:12 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-22 15:55:12 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-22 15:55:12 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-22 15:55:12 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-22 15:55:12 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-22 15:55:12 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:55:12 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 15:57:16 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 15:57:16 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 15:57:16 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 15:57:16 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 15:57:16 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 15:57:16 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 15:57:16 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 15:57:16 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 15:57:16 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 15:57:16 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 15:57:16 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 15:57:16 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 15:57:16 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 15:57:16 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:57:16 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 15:57:36 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 15:57:36 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-22 15:57:36 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 15:57:36 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 15:57:36 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 15:57:36 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 15:57:36 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 403.2 KB
+2026-06-22 15:57:36 | DEBUG    | transcriber.py:62 | Models already loaded, reusing cached instances
+2026-06-22 15:57:36 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 15:57:36 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 206400])
+2026-06-22 15:57:36 | DEBUG    | transcriber.py:201 | VAD trimming — 12.90s -> 12.90s (399/430 frames had speech)
+2026-06-22 15:57:36 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 1.000
+2026-06-22 15:57:36 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 12.9s
+2026-06-22 15:57:36 | INFO     | transcriber.py:421 | Audio duration: 12.9s — splitting into 1 chunk(s) of 30s each
+2026-06-22 15:57:39 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 12.9s] — detected: Hindi (hi) — using generic multilingual model ...
+2026-06-22 15:58:39 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'बड़ादा पर आप इंदी उठ्राज से बोलने के तो अच्छा नहीं ना अपने ज...'
+2026-06-22 15:58:39 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 349 total characters
+2026-06-22 15:58:39 | INFO     | transcriber.py:487 | Language(s) detected across this file: Hindi (hi)
+2026-06-22 15:58:39 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 15:58:39 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 15:58:39 | DEBUG    | dict_filler.py:68 | Text preview: 'बड़ादा पर आप इंदी उठ्राज से बोलने के तो अच्छा नहीं ना अपने जेसाप को जहाँ भी रिसा...'
+2026-06-22 15:58:39 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 15:58:39 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:58:39 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 15:59:23 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-22 15:59:23 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-22 15:59:23 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-22 15:59:23 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-22 15:59:23 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-22 15:59:23 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 15:59:23 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:00:40 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:00:40 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:00:40 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:00:43 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:00:43 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:00:43 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:00:43 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:00:43 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:00:43 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:00:43 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:00:43 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:00:43 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:00:43 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:00:43 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:00:43 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:00:43 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:00:43 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:00:43 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:01:18 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:01:18 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-22 16:01:18 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:01:18 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:01:18 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:01:18 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:01:18 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 573.8 KB
+2026-06-22 16:01:18 | DEBUG    | transcriber.py:62 | Models already loaded, reusing cached instances
+2026-06-22 16:01:18 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:01:18 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 293760])
+2026-06-22 16:01:18 | DEBUG    | transcriber.py:201 | VAD trimming — 18.36s -> 18.36s (584/612 frames had speech)
+2026-06-22 16:01:18 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.909
+2026-06-22 16:01:18 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 18.4s
+2026-06-22 16:01:18 | INFO     | transcriber.py:421 | Audio duration: 18.4s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:01:22 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 18.4s] — detected: Tamil (ta) — using generic multilingual model ...
+2026-06-22 16:02:03 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'பரமும் பழையிலும் மதிரச்சுக்குள்ள முதல் ராமகலிலும் மாஜச்சுட்ட...'
+2026-06-22 16:02:03 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 287 total characters
+2026-06-22 16:02:03 | INFO     | transcriber.py:487 | Language(s) detected across this file: Tamil (ta)
+2026-06-22 16:02:03 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 16:02:03 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 16:02:03 | DEBUG    | dict_filler.py:68 | Text preview: 'பரமும் பழையிலும் மதிரச்சுக்குள்ள முதல் ராமகலிலும் மாஜச்சுட்டு வாதவர் தான் கடைசம்...'
+2026-06-22 16:02:03 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 16:02:03 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:02:03 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 16:03:11 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-22 16:03:11 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-22 16:03:11 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-22 16:03:11 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-22 16:03:11 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-22 16:03:11 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:03:11 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:03:16 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:03:16 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:03:16 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:03:16 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:03:16 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:03:16 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:03:16 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:03:16 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:03:16 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:03:16 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:03:16 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:03:16 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:03:16 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:03:16 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:03:16 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:03:59 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:03:59 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:03:59 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:04:09 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:04:09 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:04:09 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:04:09 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:04:09 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:04:09 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:04:09 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:04:09 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:04:09 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:04:09 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:04:09 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:04:09 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:04:09 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:04:09 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:04:09 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:04:49 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:04:49 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-22 16:04:49 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:04:49 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:04:49 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:04:49 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:04:49 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 1112.0 KB
+2026-06-22 16:04:49 | DEBUG    | transcriber.py:62 | Models already loaded, reusing cached instances
+2026-06-22 16:04:49 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:04:49 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 569280])
+2026-06-22 16:04:49 | DEBUG    | transcriber.py:201 | VAD trimming — 35.58s -> 35.58s (1049/1186 frames had speech)
+2026-06-22 16:04:49 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.982
+2026-06-22 16:04:49 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 35.6s
+2026-06-22 16:04:49 | INFO     | transcriber.py:421 | Audio duration: 35.6s — splitting into 2 chunk(s) of 30s each
+2026-06-22 16:04:53 | INFO     | transcriber.py:457 | Transcribing chunk 1/2 [0.0s - 30.0s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-22 16:05:55 | INFO     | transcriber.py:467 | Chunk 1/2 done — 'വികല്യ ഗ്രാമീട മഷ്ടാക്കിലെ തുടകടുത്ത കഥയാണ് കൂട്യടും കർച്ച വ...'
+2026-06-22 16:05:59 | INFO     | transcriber.py:457 | Transcribing chunk 2/2 [30.0s - 35.6s] — detected: Hindi (hi) — using generic multilingual model ...
+2026-06-22 16:06:05 | INFO     | transcriber.py:467 | Chunk 2/2 done — 'अपरदिक्षिदमायें...'
+2026-06-22 16:06:05 | INFO     | transcriber.py:483 | Transcription complete — 2/2 chunks succeeded, 220 total characters
+2026-06-22 16:06:05 | INFO     | transcriber.py:487 | Language(s) detected across this file: Hindi (hi), Malayalam (ml)
+2026-06-22 16:06:05 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 16:06:05 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 16:06:05 | DEBUG    | dict_filler.py:68 | Text preview: 'വികല്യ ഗ്രാമീട മഷ്ടാക്കിലെ തുടകടുത്ത കഥയാണ് കൂട്യടും കർച്ച വിശ്വാസങ്ങളുടെയും അലാ...'
+2026-06-22 16:06:05 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 16:06:05 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:06:05 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 16:06:25 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-22 16:06:25 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-22 16:06:25 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-22 16:06:25 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-22 16:06:25 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-22 16:06:25 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:06:25 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:08:38 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:08:38 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:08:38 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:08:38 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:08:38 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:08:38 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:08:38 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:08:38 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:08:38 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:08:38 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:08:38 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:08:38 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:08:38 | INFO     | logger.py:64 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:08:38 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:08:40 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:08:40 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:08:40 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:08:40 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:08:40 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:08:40 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:08:40 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:08:40 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:08:40 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:08:40 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:08:40 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:08:40 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:08:40 | INFO     | logger.py:64 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:08:40 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:08:43 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:08:43 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:08:43 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:08:46 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:08:46 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:08:46 | INFO     | logger.py:64 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:08:46 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:08:46 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:08:46 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:08:46 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:08:46 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:08:46 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:08:46 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:08:46 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:08:46 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:08:46 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:08:46 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:08:46 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:08:56 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:08:56 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav
+2026-06-22 16:08:56 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:08:56 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:08:56 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:08:56 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:08:56 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 85.3 KB
+2026-06-22 16:08:56 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:08:56 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:08:56 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:08:59 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:09:06 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:09:06 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:09:12 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:09:12 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:09:12 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:09:12 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:09:12 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:09:12 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:09:12 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:09:12 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:09:16 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-22 16:09:36 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'അത് അവരുടെ പ്രേമവുമായി ബന്ധപ്പെട്ടാണ് അറിയപ്പെടുന്നതു തന്നെ...'
+2026-06-22 16:09:36 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 59 total characters
+2026-06-22 16:09:36 | INFO     | transcriber.py:487 | Language(s) detected across this file: Malayalam (ml)
+2026-06-22 16:09:36 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 16:09:36 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 16:09:36 | DEBUG    | dict_filler.py:68 | Text preview: 'അത് അവരുടെ പ്രേമവുമായി ബന്ധപ്പെട്ടാണ് അറിയപ്പെടുന്നതു തന്നെ...'
+2026-06-22 16:09:36 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 16:09:36 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:09:36 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 16:09:44 | INFO     | logger.py:64 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-22 16:09:44 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-22 16:09:44 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-22 16:09:44 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-22 16:09:44 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-22 16:09:44 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:09:44 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:10:07 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:10:07 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:10:07 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:10:07 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:10:07 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:10:07 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:10:07 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:10:07 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:10:07 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:10:07 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:10:07 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:10:07 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:10:07 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:10:07 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:12:23 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:12:23 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:12:23 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:12:41 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:12:41 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:12:45 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:12:45 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-22 16:12:45 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:12:45 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:12:45 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:12:45 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:12:45 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 33.8 KB
+2026-06-22 16:12:45 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:12:45 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:12:45 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:12:47 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:12:48 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:12:48 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav
+2026-06-22 16:12:48 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:12:49 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:12:49 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:12:49 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:12:49 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 85.3 KB
+2026-06-22 16:12:49 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:12:49 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:12:49 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:12:49 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:12:54 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:12:54 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:12:55 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:12:55 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:12:59 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:12:59 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:12:59 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:12:59 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:12:59 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:13:00 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:13:00 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:13:00 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:13:01 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:13:01 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:13:01 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:13:01 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:13:01 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:13:01 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:13:01 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:13:01 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:13:08 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-22 16:13:10 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-22 16:13:37 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:13:37 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:13:37 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:13:37 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:13:37 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:13:37 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:13:37 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:13:37 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:13:37 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:13:37 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:13:37 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:13:37 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:13:37 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:13:37 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:13:38 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:13:38 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:13:38 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:13:38 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:13:38 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:13:38 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:13:38 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:13:38 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:13:38 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:13:38 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:13:38 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:13:38 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:13:38 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:13:38 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:13:47 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:13:47 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:13:47 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:13:52 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:13:52 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:13:52 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:13:52 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:13:52 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:13:52 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:13:52 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:13:52 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:13:52 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:13:52 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:13:52 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:13:52 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:13:52 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:13:52 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:13:52 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:13:56 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:13:56 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav
+2026-06-22 16:13:56 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:13:56 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:13:56 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:13:56 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:13:56 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 85.3 KB
+2026-06-22 16:13:56 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:13:56 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:13:56 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:13:59 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:14:05 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:14:05 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:14:11 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:14:11 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:14:11 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:14:11 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:14:11 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:14:11 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:14:11 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:14:11 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:14:15 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-22 16:14:38 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'അത് അവരുടെ പ്രേമവുമായി ബന്ധപ്പെട്ടാണ് അറിയപ്പെടുന്നതു തന്നെ...'
+2026-06-22 16:14:38 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 59 total characters
+2026-06-22 16:14:38 | INFO     | transcriber.py:487 | Language(s) detected across this file: Malayalam (ml)
+2026-06-22 16:14:38 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 16:14:38 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 16:14:38 | DEBUG    | dict_filler.py:68 | Text preview: 'അത് അവരുടെ പ്രേമവുമായി ബന്ധപ്പെട്ടാണ് അറിയപ്പെടുന്നതു തന്നെ...'
+2026-06-22 16:14:38 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 16:14:38 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:14:38 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 16:14:53 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:14:53 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:14:53 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:14:53 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:14:53 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:14:53 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:14:53 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:14:53 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:14:53 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:14:53 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:14:53 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:14:53 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:14:53 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:14:53 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:14:54 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:14:54 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:14:54 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:14:54 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:14:54 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:14:54 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:14:54 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:14:54 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:14:54 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:14:54 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:14:54 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:14:54 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:14:54 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:14:54 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:15:48 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:15:48 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:16:53 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:16:53 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:16:53 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:16:56 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:16:56 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:16:56 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:16:56 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:16:56 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:16:56 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:16:56 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:16:56 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:16:56 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:16:56 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:16:56 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:16:56 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:16:56 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:16:56 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:16:56 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:17:11 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:17:11 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-22 16:17:11 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:17:11 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:17:11 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:17:11 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:17:11 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 28.2 KB
+2026-06-22 16:17:11 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:17:11 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:17:11 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:17:14 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:17:14 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav
+2026-06-22 16:17:14 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:17:14 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:17:14 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:17:14 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:17:14 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:17:14 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 85.3 KB
+2026-06-22 16:17:14 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:17:14 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:17:14 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:17:14 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:17:21 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:17:21 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:17:21 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:17:21 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:17:27 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:17:27 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:17:27 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:17:27 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:17:27 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:17:27 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:17:27 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:17:27 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:17:27 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:17:27 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:17:28 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:17:28 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:17:28 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:17:28 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:17:28 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:17:28 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:17:38 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: English (en) — using generic multilingual model ...
+2026-06-22 16:17:38 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: unsupported (my) (my) — using generic multilingual model ...
+2026-06-22 16:18:44 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:18:44 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:18:44 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:18:44 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:18:44 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:18:44 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:18:44 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:18:44 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:18:44 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:18:44 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:18:44 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:18:44 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:18:44 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:18:44 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:18:45 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:18:45 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:18:45 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:18:45 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:18:45 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:18:45 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-22 16:18:45 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-22 16:18:45 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-22 16:18:45 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:18:45 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-22 16:18:45 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:18:45 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-22 16:18:45 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-22 16:18:45 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-22 16:18:49 | INFO     | app.py:389 | Serving index page
+2026-06-22 16:18:49 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:18:49 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:18:53 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: UPLOAD JSON ] ------------------------------------------------------------
+2026-06-22 16:18:53 | INFO     | app.py:440 | Uploaded OCR dictionary parsed — 7 pages
+2026-06-22 16:18:53 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-22 16:18:53 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-22 16:18:53 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-22 16:18:53 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:35 |   [page_2] FAILED — value is empty string
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:62 |   [page_4] PASSED — valid OCR content
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-22 16:18:53 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-22 16:18:53 | INFO     | null_detector.py:86 | Null pages detected: 1 out of 7
+2026-06-22 16:18:53 | INFO     | null_detector.py:87 | Null page keys: ['page_2']
+2026-06-22 16:18:53 | INFO     | dict_filler.py:33 | Building status tracker for 1 null pages
+2026-06-22 16:18:53 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-22 16:18:53 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-22 16:18:53 | INFO     | app.py:377 | State initialized — 1 null pages need audio
+2026-06-22 16:18:53 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:18:53 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-22 16:19:10 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-22 16:19:10 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav
+2026-06-22 16:19:10 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.wav -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:19:10 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-22 16:19:10 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-22 16:19:10 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-22 16:19:10 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 85.3 KB
+2026-06-22 16:19:10 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-22 16:19:10 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-22 16:19:10 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-22 16:19:13 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-22 16:19:20 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-22 16:19:20 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-22 16:19:25 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-22 16:19:25 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-22 16:19:25 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-22 16:19:26 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 43657])
+2026-06-22 16:19:26 | DEBUG    | transcriber.py:201 | VAD trimming — 2.73s -> 2.70s (84/90 frames had speech)
+2026-06-22 16:19:26 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.735
+2026-06-22 16:19:26 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 2.7s
+2026-06-22 16:19:26 | INFO     | transcriber.py:421 | Audio duration: 2.7s — splitting into 1 chunk(s) of 30s each
+2026-06-22 16:19:30 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 2.7s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-22 16:19:51 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'അത് അവരുടെ പ്രേമവുമായി ബന്ധപ്പെട്ടാണ് അറിയപ്പെടുന്നതു തന്നെ...'
+2026-06-22 16:19:51 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 59 total characters
+2026-06-22 16:19:51 | INFO     | transcriber.py:487 | Language(s) detected across this file: Malayalam (ml)
+2026-06-22 16:19:51 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-22 16:19:51 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-22 16:19:51 | DEBUG    | dict_filler.py:68 | Text preview: 'അത് അവരുടെ പ്രേമവുമായി ബന്ധപ്പെട്ടാണ് അറിയപ്പെടുന്നതു തന്നെ...'
+2026-06-22 16:19:51 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-22 16:19:51 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:19:51 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 0 | Pending: 0 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-22 16:20:45 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-22 16:20:45 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-22 16:20:45 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-22 16:20:45 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-22 16:20:45 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-22 16:20:45 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-22 16:20:45 | INFO     | dict_filler.py:127 | Progress — Total: 1 | Confirmed: 1 | Pending: 0 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-23 10:51:17 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-23 10:51:17 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-23 10:51:17 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-23 10:51:17 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-23 10:51:17 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-23 10:51:18 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-23 10:51:18 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-23 10:51:18 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-23 10:51:18 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-23 10:51:18 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-23 10:51:18 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-23 10:51:18 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-23 10:51:18 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-23 10:51:18 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-23 10:51:18 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-23 10:51:18 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-23 10:51:18 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-23 10:51:19 | INFO     | logger.py:78 | ------------------------------------------------------------ [ INIT STATE ] ------------------------------------------------------------
+2026-06-23 10:51:19 | INFO     | app.py:371 | Initializing state with 7 pages
+2026-06-23 10:51:19 | INFO     | null_detector.py:77 | Starting null page detection
+2026-06-23 10:51:19 | INFO     | null_detector.py:78 | Total pages in OCR dictionary: 7
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_1' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:62 |   [page_1] PASSED — valid OCR content
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_2' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:30 |   [page_2] FAILED — value is None
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_3' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:62 |   [page_3] PASSED — valid OCR content
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_4' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:35 |   [page_4] FAILED — value is empty string
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_5' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:62 |   [page_5] PASSED — valid OCR content
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_6' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:62 |   [page_6] PASSED — valid OCR content
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:26 | Checking page 'page_7' for null status
+2026-06-23 10:51:19 | DEBUG    | null_detector.py:62 |   [page_7] PASSED — valid OCR content
+2026-06-23 10:51:19 | INFO     | null_detector.py:86 | Null pages detected: 2 out of 7
+2026-06-23 10:51:19 | INFO     | null_detector.py:87 | Null page keys: ['page_2', 'page_4']
+2026-06-23 10:51:19 | INFO     | dict_filler.py:33 | Building status tracker for 2 null pages
+2026-06-23 10:51:19 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_2' — status: pending
+2026-06-23 10:51:19 | DEBUG    | dict_filler.py:44 | Tracker entry created for 'page_4' — status: pending
+2026-06-23 10:51:19 | INFO     | dict_filler.py:46 | Status tracker built successfully
+2026-06-23 10:51:19 | INFO     | app.py:377 | State initialized — 2 null pages need audio
+2026-06-23 10:51:19 | INFO     | logger.py:78 | ------------------------------------------------------------ [ FLASK APP START ] ------------------------------------------------------------
+2026-06-23 10:51:19 | INFO     | app.py:574 | Starting Flask app on http://127.0.0.1:5000
+2026-06-23 10:51:23 | INFO     | app.py:389 | Serving index page
+2026-06-23 10:51:23 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-23 10:51:23 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-23 10:51:35 | INFO     | app.py:389 | Serving index page
+2026-06-23 10:51:35 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-23 10:51:35 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-23 10:51:37 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-23 10:51:37 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 2 | Transcribed(unconfirmed): 0 | Skipped: 0
+2026-06-23 10:52:38 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-23 10:52:38 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-23 10:52:38 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-23 10:52:38 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-23 10:52:38 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-23 10:52:38 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-23 10:52:38 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 1738.2 KB
+2026-06-23 10:52:38 | INFO     | transcriber.py:65 | Loading transcription models...
+2026-06-23 10:52:38 | INFO     | transcriber.py:66 | Cache directory: /home/nikhil/Desktop/Projects/audio_transcription_filler/models
+2026-06-23 10:52:38 | INFO     | transcriber.py:67 | First run will download both models (~3GB total) — please wait...
+2026-06-23 10:52:40 | INFO     | transcriber.py:75 | Loading Malayalam model: 'thennal/whisper-medium-ml'
+2026-06-23 10:52:47 | INFO     | transcriber.py:85 | Malayalam model loaded successfully
+2026-06-23 10:52:47 | INFO     | transcriber.py:88 | Loading multilingual model: 'openai/whisper-medium'
+2026-06-23 10:52:53 | INFO     | transcriber.py:98 | Multilingual model loaded successfully
+2026-06-23 10:52:53 | INFO     | transcriber.py:105 | Both models loaded and ready
+2026-06-23 10:52:53 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-23 10:52:53 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 889920])
+2026-06-23 10:52:53 | DEBUG    | transcriber.py:201 | VAD trimming — 55.62s -> 54.39s (891/1854 frames had speech)
+2026-06-23 10:52:54 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.496
+2026-06-23 10:52:54 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 54.4s
+2026-06-23 10:52:54 | INFO     | transcriber.py:421 | Audio duration: 54.4s — splitting into 2 chunk(s) of 30s each
+2026-06-23 10:53:01 | INFO     | transcriber.py:457 | Transcribing chunk 1/2 [0.0s - 30.0s] — detected: Tamil (ta) — using generic multilingual model ...
+2026-06-23 10:53:21 | INFO     | transcriber.py:467 | Chunk 1/2 done — 'இன்னும் சிறப்பு முதலிக்கு சம்ஞிகத்துந்தியும் முத்துந்தியும் ...'
+2026-06-23 10:53:25 | INFO     | transcriber.py:457 | Transcribing chunk 2/2 [30.0s - 54.4s] — detected: unsupported (jw) (jw) — using generic multilingual model ...
+2026-06-23 10:53:33 | INFO     | transcriber.py:467 | Chunk 2/2 done — 'Mata, ma, nana, anudana, manana My living things are somethi...'
+2026-06-23 10:53:33 | INFO     | transcriber.py:483 | Transcription complete — 2/2 chunks succeeded, 300 total characters
+2026-06-23 10:53:33 | INFO     | transcriber.py:487 | Language(s) detected across this file: jw (jw), Tamil (ta)
+2026-06-23 10:53:33 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-23 10:53:33 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-23 10:53:33 | DEBUG    | dict_filler.py:68 | Text preview: 'இன்னும் சிறப்பு முதலிக்கு சம்ஞிகத்துந்தியும் முத்துந்தியும் லோகத்தாயிரும் ஸ்ரிலு...'
+2026-06-23 10:53:33 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-23 10:53:33 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-23 10:53:33 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-23 10:54:48 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: TRANSCRIBE page_2 ] ------------------------------------------------------------
+2026-06-23 10:54:48 | INFO     | app.py:477 | Audio saved for 'page_2': /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm
+2026-06-23 10:54:48 | INFO     | app.py:356 | Normalizing audio with ffmpeg: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2.webm -> /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-23 10:54:48 | DEBUG    | app.py:364 | ffmpeg conversion succeeded
+2026-06-23 10:54:48 | INFO     | transcriber.py:389 | Starting transcription: page_2_normalized.wav
+2026-06-23 10:54:48 | DEBUG    | transcriber.py:121 | Validating audio file: /home/nikhil/Desktop/Projects/audio_transcription_filler/data/input/page_2_normalized.wav
+2026-06-23 10:54:48 | DEBUG    | transcriber.py:136 | Audio valid — format: '.wav', size: 770.7 KB
+2026-06-23 10:54:48 | DEBUG    | transcriber.py:62 | Models already loaded, reusing cached instances
+2026-06-23 10:54:48 | INFO     | transcriber.py:254 | Loading and preprocessing audio...
+2026-06-23 10:54:48 | DEBUG    | transcriber.py:258 | Audio loaded — sample rate: 16000Hz, shape: torch.Size([1, 394560])
+2026-06-23 10:54:48 | DEBUG    | transcriber.py:201 | VAD trimming — 24.66s -> 23.97s (599/822 frames had speech)
+2026-06-23 10:54:48 | DEBUG    | transcriber.py:241 | Volume normalized via librosa — original peak was 0.466
+2026-06-23 10:54:48 | INFO     | transcriber.py:282 | Audio preprocessed — duration: 24.0s
+2026-06-23 10:54:48 | INFO     | transcriber.py:421 | Audio duration: 24.0s — splitting into 1 chunk(s) of 30s each
+2026-06-23 10:54:52 | INFO     | transcriber.py:457 | Transcribing chunk 1/1 [0.0s - 24.0s] — detected: Malayalam (ml) — using Malayalam fine-tuned model ...
+2026-06-23 10:55:29 | INFO     | transcriber.py:467 | Chunk 1/1 done — 'എന്റെ നാമം അമലം ഞാൻ വരുന്നത് വീട്ടിൽ നിന്നാണ് എന്റെ വീട്ടിലെ...'
+2026-06-23 10:55:29 | INFO     | transcriber.py:483 | Transcription complete — 1/1 chunks succeeded, 115 total characters
+2026-06-23 10:55:29 | INFO     | transcriber.py:487 | Language(s) detected across this file: Malayalam (ml)
+2026-06-23 10:55:29 | INFO     | dict_filler.py:57 | Filling page 'page_2' with transcribed text
+2026-06-23 10:55:29 | DEBUG    | dict_filler.py:67 | Tracker updated for 'page_2' — status: transcribed
+2026-06-23 10:55:29 | DEBUG    | dict_filler.py:68 | Text preview: 'എന്റെ നാമം അമലം ഞാൻ വരുന്നത് വീട്ടിൽ നിന്നാണ് എന്റെ വീട്ടിലെ എട്ടു പട്ടികളുണ്ട് ...'
+2026-06-23 10:55:29 | INFO     | app.py:497 | Transcription preview ready for 'page_2'
+2026-06-23 10:55:29 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-23 10:55:29 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 0 | Pending: 1 | Transcribed(unconfirmed): 1 | Skipped: 0
+2026-06-23 10:55:37 | INFO     | logger.py:78 | ------------------------------------------------------------ [ API: CONFIRM page_2 ] ------------------------------------------------------------
+2026-06-23 10:55:37 | INFO     | app.py:523 | User edited text for 'page_2' before confirming
+2026-06-23 10:55:37 | INFO     | dict_filler.py:78 | User confirmed transcription for page 'page_2'
+2026-06-23 10:55:37 | INFO     | dict_filler.py:93 | Page 'page_2' confirmed and saved to OCR dictionary
+2026-06-23 10:55:37 | INFO     | app.py:528 | Page 'page_2' confirmed
+2026-06-23 10:55:37 | DEBUG    | app.py:399 | API: /api/status called
+2026-06-23 10:55:37 | INFO     | dict_filler.py:127 | Progress — Total: 2 | Confirmed: 1 | Pending: 1 | Transcribed(unconfirmed): 0 | Skipped: 0

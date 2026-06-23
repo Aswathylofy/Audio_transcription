@@ -14,12 +14,26 @@ DATA_INPUT_DIR  = os.path.join(BASE_DIR, "data", "input")
 DATA_OUTPUT_DIR = os.path.join(BASE_DIR, "data", "output")
 LOGS_DIR        = os.path.join(BASE_DIR, "logs")
 
-# ── HuggingFace Whisper Model ─────────────────────────────────
-# Malayalam fine-tuned Whisper model
-HF_MODEL_ID = "thennal/whisper-medium-ml"
+# ── Whisper Models ─────────────────────────────────────────────
+# Malayalam fine-tuned model — used only when detected language is Malayalam
+HF_MODEL_ID_MALAYALAM = "thennal/whisper-medium-ml"
 
-# Local cache directory — model downloaded here on first run
-# Subsequent runs load from cache (no re-download)
+# Generic multilingual model — used for language detection on every file,
+# and for transcription whenever the detected language is NOT Malayalam
+HF_MODEL_ID_MULTILINGUAL = "openai/whisper-medium"
+
+# Languages this project actively supports. Anything detected outside
+# this set still gets transcribed (via the multilingual model) but is
+# logged as "unsupported — best effort" since it wasn't explicitly tested.
+SUPPORTED_LANGUAGES = {
+    "ml": "Malayalam",
+    "ta": "Tamil",
+    "en": "English",
+    "hi": "Hindi",
+}
+
+# Local cache directory — both models downloaded here on first run.
+# Subsequent runs load from cache (no re-download).
 MODEL_CACHE_DIR = os.path.join(BASE_DIR, "models")
 
 # ── Null Page Detection Rules ─────────────────────────────────

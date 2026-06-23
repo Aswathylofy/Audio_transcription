@@ -46,6 +46,20 @@ def get_logger(name: str) -> logging.Logger:
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
 
+    # Force every single log call to flush to disk immediately instead of
+    # sitting in the OS write buffer. Without this, log lines can appear
+    # to "stop updating" under Flask's debug/reloader process even though
+    # they're still being written — they just land in bursts instead of
+    # in real time.
+    file_handler.flush = lambda: file_handler.stream.flush()
+    original_emit = file_handler.emit
+
+    def emit_and_flush(record):
+        original_emit(record)
+        file_handler.flush()
+
+    file_handler.emit = emit_and_flush
+
     # --- Console Handler (prints to terminal) ---
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.DEBUG)

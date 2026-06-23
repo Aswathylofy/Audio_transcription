@@ -1,16 +1,20 @@
 """
 transcriber.py
 --------------
-Handles Malayalam audio transcription using the HuggingFace model:
-    thennal/whisper-medium-ml  (Malayalam fine-tuned Whisper)
+Handles multilingual audio transcription using two HuggingFace models:
+    1. thennal/whisper-medium-ml  (Malayalam fine-tuned Whisper)
+    2. openai/whisper-medium      (generic multilingual Whisper)
 
-Uses WhisperProcessor + WhisperForConditionalGeneration directly
-to force Malayalam language and script output.
+For every audio file, the generic model first detects the spoken
+language. If it's Malayalam, transcription is routed to the Malayalam
+fine-tuned model for best accuracy. For any other language (Tamil,
+English, Hindi, etc.), transcription uses the generic multilingual
+model directly.
 
 Long audio files are split into 30-second chunks (Whisper's processing
 window limit) and transcribed sequentially, then joined together.
 
-Model is downloaded on first run and cached locally in /models folder.
+Both models are downloaded on first run and cached locally in /models.
 Subsequent runs load from cache — no internet needed after first run.
 """
 
@@ -18,11 +22,19 @@ import os
 import torch
 import torchaudio
 from utils.logger import get_logger
-from config.settings import HF_MODEL_ID, MODEL_CACHE_DIR, SUPPORTED_AUDIO_FORMATS
+from config.settings import (
+    HF_MODEL_ID_MALAYALAM,
+    HF_MODEL_ID_MULTILINGUAL,
+    SUPPORTED_LANGUAGES,
+    MODEL_CACHE_DIR,
+    SUPPORTED_AUDIO_FORMATS,
+)
 
 logger = get_logger(__name__)
 
-# Global model components — loaded once, reused across calls
+# Global model components — loaded once, reused across calls.
+# Both models are kept in memory simultaneously so switching between
+# them per-file has zero reload delay.
 _components = None
 
 # Whisper's fixed processing window — do not change.
@@ -32,54 +44,71 @@ SAMPLE_RATE = 16000
 SAMPLES_PER_CHUNK = CHUNK_DURATION_SEC * SAMPLE_RATE
 
 
-def load_model():
+def load_models():
     """
-    Loads WhisperProcessor and WhisperForConditionalGeneration
-    from thennal/whisper-medium-ml.
+    Loads BOTH Whisper models into memory at startup:
+        1. thennal/whisper-medium-ml   — Malayalam fine-tuned
+        2. openai/whisper-medium       — generic multilingual
 
-    Downloads on first run (~1.5GB), then loads from local cache.
-    Stored in _components dict — loaded only once per session.
+    Keeping both loaded simultaneously means switching between them
+    per-chunk has zero reload delay during transcription.
+
+    Downloads on first run (~1.5GB + ~1.5GB), then loads from local
+    cache on every run after that.
     """
     global _components
 
     if _components is not None:
-        logger.debug("Model already loaded, reusing cached instance")
+        logger.debug("Models already loaded, reusing cached instances")
         return _components
 
-    logger.info(f"Loading model: '{HF_MODEL_ID}'")
+    logger.info("Loading transcription models...")
     logger.info(f"Cache directory: {MODEL_CACHE_DIR}")
-    logger.info("First run will download the model (~1.5GB) — please wait...")
+    logger.info("First run will download both models (~3GB total) — please wait...")
 
     try:
         from transformers import WhisperProcessor, WhisperForConditionalGeneration
 
         os.makedirs(MODEL_CACHE_DIR, exist_ok=True)
 
-        processor = WhisperProcessor.from_pretrained(
-            HF_MODEL_ID,
+        # ── Malayalam fine-tuned model ────────────────────────
+        logger.info(f"Loading Malayalam model: '{HF_MODEL_ID_MALAYALAM}'")
+        ml_processor = WhisperProcessor.from_pretrained(
+            HF_MODEL_ID_MALAYALAM,
             cache_dir=MODEL_CACHE_DIR
         )
-
-        model = WhisperForConditionalGeneration.from_pretrained(
-            HF_MODEL_ID,
+        ml_model = WhisperForConditionalGeneration.from_pretrained(
+            HF_MODEL_ID_MALAYALAM,
             cache_dir=MODEL_CACHE_DIR
         )
+        ml_model.eval()
+        logger.info("Malayalam model loaded successfully")
 
-        # Set to evaluation mode (disables dropout etc.)
-        model.eval()
+        # ── Generic multilingual model ────────────────────────
+        logger.info(f"Loading multilingual model: '{HF_MODEL_ID_MULTILINGUAL}'")
+        multi_processor = WhisperProcessor.from_pretrained(
+            HF_MODEL_ID_MULTILINGUAL,
+            cache_dir=MODEL_CACHE_DIR
+        )
+        multi_model = WhisperForConditionalGeneration.from_pretrained(
+            HF_MODEL_ID_MULTILINGUAL,
+            cache_dir=MODEL_CACHE_DIR
+        )
+        multi_model.eval()
+        logger.info("Multilingual model loaded successfully")
 
         _components = {
-            "processor": processor,
-            "model": model
+            "malayalam": {"processor": ml_processor, "model": ml_model},
+            "multilingual": {"processor": multi_processor, "model": multi_model},
         }
 
-        logger.info(f"Model '{HF_MODEL_ID}' loaded successfully")
+        logger.info("Both models loaded and ready")
 
     except ImportError:
         logger.error("transformers package not installed. Run: uv add transformers")
         raise
     except Exception as e:
-        logger.error(f"Failed to load model '{HF_MODEL_ID}': {e}")
+        logger.error(f"Failed to load models: {e}")
         raise
 
     return _components
@@ -259,15 +288,54 @@ def load_and_preprocess_audio(audio_path: str):
         return None
 
 
-def transcribe_chunk(waveform_chunk, processor, model, forced_decoder_ids) -> str:
+def detect_language(waveform_chunk, multi_processor, multi_model) -> str:
     """
-    Transcribes a single audio chunk (max 30 seconds) using the model.
+    Detects the spoken language of a single audio chunk using the
+    generic multilingual model's built-in language-detection method.
+
+    Whisper computes a probability distribution over all languages it
+    was trained on as part of its standard decoding setup.
+    `model.detect_language()` runs just that detection step (no full
+    transcription) and returns the single most likely language's
+    special token id (e.g. the token for "<|ml|>").
 
     Args:
         waveform_chunk: 1D torch tensor, audio samples for this chunk only
-        processor: WhisperProcessor instance
-        model: WhisperForConditionalGeneration instance
-        forced_decoder_ids: pre-computed Malayalam language/task tokens
+        multi_processor: WhisperProcessor for the generic multilingual model
+        multi_model: WhisperForConditionalGeneration for the generic model
+
+    Returns:
+        ISO language code string, e.g. "ml", "ta", "en", "hi"
+    """
+    inputs = multi_processor(
+        waveform_chunk.numpy(),
+        sampling_rate=SAMPLE_RATE,
+        return_tensors="pt"
+    )
+
+    with torch.no_grad():
+        lang_token_ids = multi_model.detect_language(
+            input_features=inputs["input_features"]
+        )
+
+    # Token looks like "<|ml|>" once decoded — strip the markers to get "ml"
+    lang_token = multi_processor.tokenizer.decode(lang_token_ids[0])
+    lang_code = lang_token.strip("<|>")
+
+    return lang_code
+
+
+def transcribe_chunk(waveform_chunk, processor, model, language_code: str) -> str:
+    """
+    Transcribes a single audio chunk (max 30 seconds) using the given
+    model, forcing output into the specified language's script.
+
+    Args:
+        waveform_chunk: 1D torch tensor, audio samples for this chunk only
+        processor: WhisperProcessor instance for the model being used
+        model: WhisperForConditionalGeneration instance for the model being used
+        language_code: ISO code like "ml", "ta", "en", "hi" — forces both
+                        the spoken-language assumption and the output script
 
     Returns:
         Transcribed text for this chunk (string, may be empty on failure)
@@ -276,6 +344,11 @@ def transcribe_chunk(waveform_chunk, processor, model, forced_decoder_ids) -> st
         waveform_chunk.numpy(),
         sampling_rate=SAMPLE_RATE,
         return_tensors="pt"
+    )
+
+    forced_decoder_ids = processor.get_decoder_prompt_ids(
+        language=language_code,
+        task="transcribe"
     )
 
     with torch.no_grad():
@@ -294,20 +367,24 @@ def transcribe_chunk(waveform_chunk, processor, model, forced_decoder_ids) -> st
 
 def transcribe_audio(audio_path: str) -> str | None:
     """
-    Transcribes a Malayalam audio file of ANY length using thennal/whisper-medium-ml.
+    Transcribes an audio file of ANY length and ANY supported language.
 
-    Long audio is automatically split into 30-second chunks (Whisper's
-    fixed processing window), each chunk transcribed separately, then
-    all chunk results are joined into one final transcript.
+    For each 30-second chunk:
+        1. Detect the spoken language using the generic multilingual model
+        2. If Malayalam -> route to the Malayalam fine-tuned model
+        3. Otherwise -> transcribe directly with the generic multilingual model
+    All chunk results are then joined into one final transcript.
 
-    Forces Malayalam language and Malayalam script (not Devanagari)
-    using forced_decoder_ids from WhisperProcessor.
+    Per-chunk detection (rather than once per whole file) means a single
+    recording can contain a language switch mid-way and still be handled
+    correctly — e.g. someone reading mostly Malayalam but saying an
+    English term partway through.
 
     Args:
         audio_path: Full path to the audio file (.wav, .mp3, etc.)
 
     Returns:
-        Full transcribed Malayalam text, or None if failed
+        Full transcribed text (mixed languages as detected), or None if failed
     """
     logger.info(f"Starting transcription: {os.path.basename(audio_path)}")
 
@@ -315,13 +392,15 @@ def transcribe_audio(audio_path: str) -> str | None:
     if not validate_audio_file(audio_path):
         return None
 
-    # Step 2: Load model
+    # Step 2: Load both models
     try:
-        components = load_model()
-        processor = components["processor"]
-        model = components["model"]
+        components = load_models()
+        ml_processor = components["malayalam"]["processor"]
+        ml_model = components["malayalam"]["model"]
+        multi_processor = components["multilingual"]["processor"]
+        multi_model = components["multilingual"]["model"]
     except Exception:
-        logger.error("Cannot transcribe — model failed to load")
+        logger.error("Cannot transcribe — models failed to load")
         return None
 
     # Step 3: Load and preprocess full audio
@@ -344,15 +423,10 @@ def transcribe_audio(audio_path: str) -> str | None:
         f"splitting into {num_chunks} chunk(s) of {CHUNK_DURATION_SEC}s each"
     )
 
-    # Step 5: Pre-compute Malayalam language/task tokens (same for all chunks)
-    forced_decoder_ids = processor.get_decoder_prompt_ids(
-        language="malayalam",
-        task="transcribe"
-    )
-
-    # Step 6: Transcribe each chunk sequentially
+    # Step 5: Detect language + transcribe each chunk sequentially
     full_transcript_parts = []
     failed_chunks = 0
+    language_log = []  # tracks which language was used per chunk, for the summary log
 
     for i in range(num_chunks):
         start_sample = i * SAMPLES_PER_CHUNK
@@ -367,14 +441,28 @@ def transcribe_audio(audio_path: str) -> str | None:
             logger.debug(f"Chunk {i + 1}/{num_chunks} is empty — skipping")
             continue
 
-        logger.info(
-            f"Transcribing chunk {i + 1}/{num_chunks} "
-            f"[{start_sec:.1f}s - {end_sec:.1f}s] ..."
-        )
-
         try:
-            chunk_text = transcribe_chunk(chunk, processor, model, forced_decoder_ids)
+            # ── Detect language for this specific chunk ──────
+            lang_code = detect_language(chunk, multi_processor, multi_model)
+            lang_name = SUPPORTED_LANGUAGES.get(lang_code, f"unsupported ({lang_code})")
+
+            # ── Route to the right model ──────────────────────
+            if lang_code == "ml":
+                processor, model = ml_processor, ml_model
+                model_used = "Malayalam fine-tuned"
+            else:
+                processor, model = multi_processor, multi_model
+                model_used = "generic multilingual"
+
+            logger.info(
+                f"Transcribing chunk {i + 1}/{num_chunks} "
+                f"[{start_sec:.1f}s - {end_sec:.1f}s] "
+                f"— detected: {lang_name} ({lang_code}) — using {model_used} model ..."
+            )
+
+            chunk_text = transcribe_chunk(chunk, processor, model, lang_code)
             full_transcript_parts.append(chunk_text)
+            language_log.append(lang_code)
 
             logger.info(f"Chunk {i + 1}/{num_chunks} done — '{chunk_text[:60]}...'")
 
@@ -383,13 +471,20 @@ def transcribe_audio(audio_path: str) -> str | None:
             logger.error(f"Chunk {i + 1}/{num_chunks} failed: {e}")
             continue
 
-    # Step 7: Join all chunks into final transcript
+    # Step 6: Join all chunks into final transcript
     transcribed_text = " ".join(full_transcript_parts).strip()
+
+    # Step 7: Summary logging — which languages were detected overall
+    unique_languages = sorted(set(language_log))
+    lang_summary = ", ".join(
+        f"{SUPPORTED_LANGUAGES.get(code, code)} ({code})" for code in unique_languages
+    )
 
     logger.info(
         f"Transcription complete — {num_chunks - failed_chunks}/{num_chunks} "
         f"chunks succeeded, {len(transcribed_text)} total characters"
     )
+    logger.info(f"Language(s) detected across this file: {lang_summary or 'none'}")
 
     if failed_chunks > 0:
         logger.warning(f"{failed_chunks} chunk(s) failed during transcription")
