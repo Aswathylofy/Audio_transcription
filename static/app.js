@@ -11,6 +11,20 @@ const toastEl = document.getElementById("toast");
 // Tracks in-progress MediaRecorder sessions, keyed by page_key
 const activeRecorders = {};
 
+// Available transcription models + supported languages, fetched once
+// from the backend at startup and used to build the per-page model
+// picker dropdowns. Model selection is always manual.
+let MODEL_OPTIONS = { models: [], language_labels: {} };
+
+async function loadModelOptions() {
+    try {
+        const res = await fetch("/api/models");
+        MODEL_OPTIONS = await res.json();
+    } catch (err) {
+        showToast("Failed to load model options: " + err.message, "error");
+    }
+}
+
 // ── Screen switching (landing <-> main dashboard) ────────────
 function showScreen(screenId) {
     document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
@@ -110,8 +124,20 @@ function renderPages(pages) {
 }
 
 function buildUploadZone(page) {
+    const modelOptionsHtml = MODEL_OPTIONS.models.map(
+        m => `<option value="${m.id}">${escapeHtml(m.label)}</option>`
+    ).join("");
+
     return `
         <div class="page-action">
+            <div class="model-picker-row">
+                <label class="model-picker-label">
+                    Malayalam handled by
+                    <select class="model-select" id="model-select-${page.page_key}">
+                        ${modelOptionsHtml}
+                    </select>
+                </label>
+            </div>
             <div class="upload-row">
                 <label class="btn btn-outline btn-small" for="audio-${page.page_key}">
                     Upload audio
@@ -132,6 +158,11 @@ function buildUploadZone(page) {
             </div>
         </div>
     `;
+}
+
+function getSelectedModelChoice(pageKey) {
+    const modelSelect = document.getElementById(`model-select-${pageKey}`);
+    return modelSelect.value;
 }
 
 function wireUploadZone(pageKey) {
@@ -155,8 +186,11 @@ async function uploadAndTranscribe(pageKey, file) {
     const progressEl = document.getElementById(`progress-${pageKey}`);
     progressEl.classList.add("active");
 
+    const model_choice = getSelectedModelChoice(pageKey);
+
     const formData = new FormData();
     formData.append("audio", file);
+    formData.append("model_choice", model_choice);
 
     try {
         const res = await fetch(`/api/transcribe/${pageKey}`, {
@@ -514,4 +548,4 @@ function escapeHtml(str) {
 
 // ── Init ──────────────────────────────────────────────────────
 initKeyboard();
-loadStatus();
+loadModelOptions().then(() => loadStatus());
